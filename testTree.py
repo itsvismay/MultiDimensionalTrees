@@ -17,9 +17,13 @@ def readInputPoints(filename):
 FileName = 'PDBFiles/1QKU.pdb'
 
 pdb = ReadPDB(FileName)
-X = np.array(pdb[['x','y','z', 'serial']],dtype='float64')
-X1 = X[:, 0:10]
-listX = [tuple(elem) for elem in X1]
+X = np.array(pdb[['x','y','z']],dtype='float64')
+X1 = X[:10]
+listX=[]
+for i in range(len(X1)):
+	print(i)
+	tupp = tuple([round(X1[i][0], 3)])+tuple([round(X1[i][1],3)])+tuple([round(X1[i][2], 3)])+tuple([i])
+	listX.append(tupp)
 data1 = listX
 data2 = listX
 Tree1 = KDTree.construct_from_data(data1)
@@ -28,7 +32,7 @@ Tree2 = KDTree.construct_from_data(data2)
 querypoint = (42.5150,16.8110,16.5530, 1)
 nnpoints = Tree1.querynn(querypoint, t=4)
 #print(nnpoints)
-total =0
+total = 0
 for i in range(len(nnpoints)):
 	rangepoints =Tree2.queryrange(query_point = nnpoints[i], r = 4)
 	#print(rangepoints)

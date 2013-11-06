@@ -2,21 +2,21 @@
 
 from ContactGeometry1 import *
 import numpy as np
-import matplotlib as plt
 
 sig = 8 
-FileName = 'PDBFiles/1QKU.pdb'
+FileName1 = 'd1cida1.ent'
+FileName2 = 'd2rhea_.ent'
 
-pdb = ReadPDB(FileName)
-X = np.array(pdb[['x','y','z', 'serial']],dtype='float64')
-X1 = X[:, 0:10]
-C = ContactMatrix(X1,X1,sig)
-R = ContactCoord(C)
+# read PDB files and extract CA atom coordinates
+pdb1 = ReadPDB(FileName1)
+pdb2 = ReadPDB(FileName2)
+X1 = CA_coordinates(pdb1) 
+X2 = CA_coordinates(pdb2) 
 
-# display contact matrix as heat map
-#np.set_printoptions(precision=8,suppress=True)
-#print(C.tolist())
-#np.savetxt("contactmatrix.csv", C.tolist(),fmt='%.5f', delimiter=",")
-#imgplot = plt.imshow(C)
-#plt.colorbar()
+# compute contact matrices and contact coordinates
+C1 = ContactMatrix(X1,X1,sig)
+C2 = ContactMatrix(X2,X2,sig)
+R1 = ContactCoord(C1)
+R2 = ContactCoord(C2)
+
 
