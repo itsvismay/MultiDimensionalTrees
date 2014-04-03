@@ -72,73 +72,9 @@ Vismay Modi
 \end_layout
 
 \begin_layout Abstract
-Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
+By modeling the individual atoms in proteins as nodes on a multidimensional
+ tree, we are able to speed up the structural alignment of proteins.
+ 
 \end_layout
 
 \begin_layout Part
@@ -154,46 +90,212 @@ KD Tree background
 \end_layout
 
 \begin_layout Standard
-Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
+Invented by Jon Louis Bentley in 1975, a k-d tree is a datastructure in
+ the binary tree family that partitions k-dimensional space.
+ The structure is used to organize points in k dimensions.
+ Every internal (non-leaf) node in a k-d tree implicitly divides a hyperplane
+ into two parts known as half-spaces.
+ The left half-space represents all points to the left of the node, and
+ the right half-space is all points to the right.
+\end_layout
+
+\begin_layout Standard
+Since our data occupies multiple dimensions, the direction of the hyperplane
+ needs to be changed at each level of the tree.
+ For 3 dimensional data, we cycle through 3 possible hyperplanes from one
+ level to the next level of the tree.
+ For 2 dimensional data, we would only cycle through 2 hyper planes (x-axis
+ and y-axis).
+\end_layout
+
+\begin_layout Standard
+Being a k-dimensional binary search tree, the k-d tree has time complexities
+ simliar to a regular binary tree.
+ If there are n points in a dataset, then the space complexity for a k-d
+ tree will be O(n) because the tree will need to store n nodes, one for
+ each point.
+ The search complexity, insert complexity and delete complexity will be
+ O(log(n)), same as a binary tree.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Operation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average Time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average Space
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Search for node
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(log(n))
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Insert node
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(log(n))
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Delete node
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(log(n))
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Construction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(nlog(n))
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(n)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In a paper titled Multidimensional Binary Search Trees in Databasebase Applicati
+ons, author Jon L.
+ Bentley, inventor of the k-d tree describes one of its first uses.
+ Multidimensional trees were originally created to 
+\begin_inset Quotes eld
+\end_inset
+
+solve geometric problems in statistics and data analysis.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Fast forward about 30 years and you'll find that k-d trees are being used
+ in everything from Ray Tracing algorithms in computer graphics to protein
+ analysis in computational biology.
 \end_layout
 
 \begin_layout Subsection
@@ -201,46 +303,51 @@ KD tree construction algorithm
 \end_layout
 
 \begin_layout Standard
-Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
- Some stuff about my thesis.
+There are many possible ways to construct a k-d tree.
+ The way my code works is the following recursive algorithm:
+\end_layout
+
+\begin_layout Enumerate
+Take 2 inputs.
+ An initial list of points (unsorted) and the initial depth (0)
+\end_layout
+
+\begin_layout Enumerate
+Begin the recursive process by checking for the base case - If the list
+ of points is empty, return.
+\end_layout
+
+\begin_layout Enumerate
+Choose the direction in which to construct the splitting hyperplane.
+ This is chosen by doing depth mod k.
+ Lets call this direction the splitting-axis.
+\end_layout
+
+\begin_layout Enumerate
+Now, sort the points list by the coordinate corresponding to the splitting-axis.
+ The median of the sorted points is the new root node.
+ We sort the list in order to balance the tree.
+ It is possible to construct a k-d tree without sorting the list by the
+ splitting-axis, but that k-d tree might not be balanced.
+ An unbalanced tree is less efficient for search operations and that defeates
+ the purpose of a k-d tree for us.
+\end_layout
+
+\begin_layout Enumerate
+Call recursive construction on all points to the left of the median.
+ Pass in the left half of the sorted points list and a new depth (increased
+ by 1).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Call recursive construction on all points to the right of the median.
+ Pass in the right half of the sorted points list and a new depth (increased
+ by 1).
+\end_layout
+
+\begin_layout Enumerate
+Take the left tree, the node, and the right tree and return the entire structure.
 \end_layout
 
 \begin_layout Subsection
@@ -248,6 +355,223 @@ Searching a KD tree
 \end_layout
 
 \begin_layout Standard
+Searching a k-d tree is similar to searching a binary tree.
+ However, since k-d trees organize multi-dimensional space, they are seldom
+ used to search for individual points.
+ Rather, searches are often conducted for entire sections of k-dimensional
+ space.
+ There are two main types of searches conducted.
+\end_layout
+
+\begin_layout Subsubsection
+Nearest Neighbor Search
+\end_layout
+
+\begin_layout Standard
+This search algorithm is used to find the t points in the k-d tree closest
+ to a given input point.The sorted k-d tree structure is ideal because it
+ allows us to avoid searching large portions of space.
+\end_layout
+
+\begin_layout Enumerate
+Take in t the number of closest points, and p the search point.
+\end_layout
+
+\begin_layout Enumerate
+Start with the root node and begin the recursive process.
+ Iterate through each axis (x, y, z) of point p.
+ If the axis is less than the current node, go left, otherwise go right.
+\end_layout
+
+\begin_layout Enumerate
+Continue this until the algorithm reaches a leaf node.
+ Save this node as the 
+\begin_inset Quotes eld
+\end_inset
+
+current-best
+\begin_inset Quotes erd
+\end_inset
+
+ option B (closest point found yet).
+\end_layout
+
+\begin_layout Enumerate
+As the algorithms unwinds out of the recursive process check if the node
+ you are currently at is a closer point than B.
+ If it is, then replace the new point with your previous best.
+\end_layout
+
+\begin_layout Enumerate
+Also check the other side of the splitting plane for closer points.
+ Move down the other branch of the current node and follow the recursive
+ search process.
+\end_layout
+
+\begin_layout Enumerate
+If no points are found, or the splitting plane itself is farther away than
+ the current best point, continue up the tree until you are back at the
+ root.
+\end_layout
+
+\begin_layout Standard
+There are several ways to optimize this algorithm.
+ Use squared distances to avoid extra computation.
+ Use an approximation method to find the closest distance.
+ 
+\end_layout
+
+\begin_layout Standard
+This algorithm has been proved to be O(log(n)) complexity in the 1977 paper
+ by Jon Bentley.
+\end_layout
+
+\begin_layout Subsubsection
+Range Search
+\end_layout
+
+\begin_layout Standard
+This search algorithm is used to find all points in the k-d tree within
+ a distance d of a given input point.
+ We can avoid searching through large amounts of data using the k-d tree
+ structure.
+\end_layout
+
+\begin_layout Enumerate
+Take in the query point p and the radius of the the range r.
+\end_layout
+
+\begin_layout Enumerate
+Start with the root note of the tree and begin the recursive search process.
+ Iterate through each axis (x, y, z) of point p.
+ 
+\end_layout
+
+\begin_layout Enumerate
+If the query point is less than the node, go to the left subtree, otherwise
+ go to the right right recursively.
+ In the new recursive call, choose a different splitting plane.
+\end_layout
+
+\begin_layout Enumerate
+As you unwind from the recursive process, check if the node you are currently
+ located at is within the range specified by r.
+ If so, then add the node to the list of range points.
+ Also if the node is within the range, iterate through the 2nd subtree of
+ the node, just in case any other viable points were missed in our initial
+ search.
+ If the node is not in the range, then continue.
+\end_layout
+
+\begin_layout Enumerate
+At the end of the recursive process, return the list of points within range
+ r of the query point p.
+\end_layout
+
+\begin_layout Standard
+There are several ways to optimize the performance of this algorithm as
+ well.
+ Same as with NN-Search, use squared distances to avoid extra computation.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Curse of Dimensionality
+\end_layout
+
+\begin_layout Standard
+The curse of dimensionality is a phenomena that occurs when analyzing high
+ dimensional data.
+ High dimensional objects become more sparse because as the number of dimensions
+ increase, space increases as well.
+ So it takes much longer to search through higher dimensions than lower
+ dimensions.
+ Interestingly enough, this very project is affected by it as well.
+\end_layout
+
+\begin_layout Standard
+We ran some tests with higher dimensional k-d tree structures and found
+ that in lower dimensions, k-d tree perform extremely well on the nearest
+ neighbor search.
+ The traditional exhaustive search is nearly 10x slower than a k-d NN-Search.
+ However, when you approach 8 or 9 dimensions, a simple exhaustive search
+ is almost just as slow as the k-d tree.
+ So these multidimensional trees are quite useless in higher dimensions.
+\end_layout
+
+\begin_layout Standard
+This is important because although proteins are located in our 3-dimensional
+ world, using linear algebra, we find that proteins have a much higher intrinsic
+ dimension.
+ Biologically, proteins are flexible.
+ They change shape based on external stimulus and their surrounding environments.
+ Sometimes proteins can be represented by 10-15 dimensional matrices.
+ Ofcourse, a k-d tree would not be the best approach for modeling 15 dimensional
+ objects due to the 
+\begin_inset Quotes eld
+\end_inset
+
+curse of dimensionality
+\begin_inset Quotes erd
+\end_inset
+
+ described above.
+ Therefore we chose to simplify our model and assume proteins were 3 dimensional
+ rigid bodies.
+\end_layout
+
+\begin_layout Part
+Background
+\end_layout
+
+\begin_layout Standard
+In order to structurally align two proteins a lot of linear algebra is needed.
+ Lets call the first molecule protein A with n C-Alpha atoms and the second,
+ protein B with m C-Alpha atoms.
+ A contact matrix called
+\begin_inset Formula $C_{AB}$
+\end_inset
+
+is created by measuring the distance between every single atom in protein
+ A from every atom in protein B.
+ This contact matrix 
+\begin_inset Formula $C_{AB}$
+\end_inset
+
+is an n x m matrix where the columns represent atoms from protein A, and
+ the rows represent atoms from protein B.
+ The values of the matrix represent the distance between the two atoms.
+\end_layout
+
+\begin_layout Standard
+The next step of the process is to only measure the distance between relevant
+ atoms.
+ So we choose out cut-off distance k to be 8 angstroms.
+ Any distance greater than k is irrelevant to the rest of the calculations
+ because it indicates that the two atoms are not in contact with each other.
+ We only want to include atoms that are in contact with each other.
+\end_layout
+
+\begin_layout Standard
+Once the contact matrix is made, we create two more contact matrices 
+\begin_inset Formula $C{}_{A}$
+\end_inset
+
+and 
+\begin_inset Formula $C{}_{B}$
+\end_inset
+
+.
+ This is a contact matrix between each atom of protein A and each atom of
+ protein B.
+ It is a symmetric positive definite matrix.
+\end_layout
+
+\begin_layout Part*
+Part III What we've done
+\end_layout
+
+\begin_layout Standard
 Some stuff about my thesis.Some stuff about my thesis.
  Some stuff about my thesis.
  Some stuff about my thesis.
@@ -290,21 +614,8 @@ Some stuff about my thesis.Some stuff about my thesis.
  Some stuff about my thesis.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $\begin{array}{ccccc}
-p1 & p2 & p3 & p4 & p\\
-p & p & p & p & p\\
-p & p & p & p & p\\
-p & pp & p & p & p\\
-p & p & p & p & p
-\end{array}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Part
-Protein Stuff
+\begin_layout Part*
+Part IV Future stuff
 \end_layout
 
 \begin_layout Standard
@@ -370,6 +681,34 @@ key "1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+http://www.cse.usf.edu/~ytu/Literature/KDtree-SE79.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+ Friedman, Jerome H., Bentley, Jon Louis, Finkel, Raphael Ari (sep 1977).
+ "An Algorithm for Finding Best Matches in Logarithmic Expected Time".
+ ACM Trans.
+ Math.
+ Softw.
+ (ACM) 3 (3): 209–226.
+ doi:10.1145/355744.355745.
+ ISSN 0098-3500.
+ Retrieved 29 March, 2013.
 \end_layout
 
 \end_body

@@ -2,7 +2,8 @@
 
 from numpy import arange,argmax,argsort,array,cos,diag,dot,eye,exp,insert,max,real,reshape,sign,sin,sqrt,sum,tile,zeros
 from numpy.linalg import det,eig,svd
-from scipy.optimize import fmin_ncg,fmin_bfgs
+#from scipy.optimize import fmin_ncg,fmin_bfgs
+import scipy
 import pandas as pd
 
 def ReadPDB(FileName):

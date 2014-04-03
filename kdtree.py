@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # encoding: utf-8
 
-
+import math
 __version__ = "1r11.1.2013"
 __all__ = ["KDTree"]
 
@@ -13,6 +13,12 @@ def square_distance(pointA, pointB):
         distance += (pointA[dimension] - pointB[dimension])**2
     return distance
 
+def dot_product(Va, Vb):
+    #No need to do transpose here. its done earlier
+    d=0
+    for i in range(len(Va)):
+        d+=Va[i]*Vb[i]
+    return d
 class KDTreeNode():
     def __init__(self, point, left, right):
         self.point = point
@@ -27,14 +33,19 @@ class KDTreeRange():
     def __init__(self, query_point, r):
         self.query_point = query_point
         self.range = r
-        self.current_best = []
+        #self.found_points = [] #Toggle for full C matrix calculation
+        self.ContactScore = 0 #contact score between query point and other points
     def add(self, point):
-        sd = square_distance(point, self.query_point)
+        sd = square_distance(point, self.query_point) #square distance between 2 atoms
         if (sd<=self.range):
-            self.current_best.append(((point),sd))
+            #Contact Score calculation happens here
+            Cij = math.exp(-0.5*(sd/64))
+            self.ContactScore += Cij*dot_product(self.query_point[-1], point[-1])
+            #self.found_points.append(((point),sd)) #Toggle for full C matrix calculation
         return
     def getRange(self):
-        return self.current_best
+        #return self.found_points #Toggle for full C matrix calculation
+        return self.ContactScore #Toggle for recursive calculation
 
 
 class KDTreeNeighbours():
@@ -148,7 +159,7 @@ class KDTree():
 
             return
 
-        # if there's no tree, there's no neighbors
+        # if there's no tree, there's no range
         if self.root_node != None:
             r = r*r #we used distance sqd to make it optimized
             points = KDTreeRange(query_point, r)
@@ -156,8 +167,6 @@ class KDTree():
             result = points.getRange()
         else:
             result = []
-        
-        #print statistics
         return result
 
 

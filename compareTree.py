@@ -60,7 +60,7 @@ kdTreeConstruct = []
 kdTreeSearch = []
 bruteForceSearch =[]
 for i in range(25):
-	data = randPoints(10000)
+	#data = randPoints(10000) - data from rand points
 	startCon = time.time()
 	tree = KDTree.construct_from_data(data)
 	constructionTime = time.time() - startCon
